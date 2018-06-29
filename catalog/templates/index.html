@@ -1,0 +1,20 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<h1>Local Library Home</h1>
+
+<p>Welcome to <em>LocalLibrary</em>, a very basic Django website</p>
+
+<h2>Dynamic Content</h2>
+
+<p>The library has the following record counts:</p>
+
+<ul>
+	<li><strong>Books:</strong>{{ count_books }}</li>
+	<li><strong>Copies:</strong>{{ count_instances }}</li>
+	<li><strong>Copies Availanle:</strong>{{ count_avail_books }}</li>
+	<li><strong>Authors:</strong>{{ count_authors }}</li>
+</ul>
+
+<p>You have visited the page {{count_requests}} {% if count_requests == 0%} time {% else %} times {%endif %}</p>
+{% endblock %}
