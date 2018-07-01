@@ -21,7 +21,10 @@
 		{% if copy.status != 'a' %}<p><strong>Due to be returned:</strong>>{{ copy.due_date}}</p>{% endif %}
 
 		<p><strong>Imprint:</strong>{{copy.imprint}}</p>
+		<p><strong>Borrower:</strong>{{copy.borrower}}</p>
 		<p class="text-muted"><strong>Id:</strong>{{copy.id}}</p>
 		{% endfor %}
 	</div>
+	<a class="btn btn-danger" href="{% url 'book-delete' book.pk %}">Delete Book?</a></p>
+	<a class="btn btn-info" href="{% url 'book-update' book.pk %}">Update Book?</a></p>
 	{% endblock %}
