@@ -20,12 +20,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'y=!_#ssb$zz5jfkgug#f%2j^0z%-9e0%w6c^_^ytiwh$b1p@0j'
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'y=!_#ssb$zz5jfkgug#f%2j^0z%-9e0%w6c^_^ytiwh$b1p@0j')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+#DEBUG = False
 
+DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
 ALLOWED_HOSTS = []
+
 
 
 # Application definition
@@ -124,3 +126,10 @@ STATIC_URL = '/static/'
 LOGIN_REDIRECT_URL = '/'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+
+#Heroku: Update the db config from $DATABASE_URL
+import dj_database_url
+
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
