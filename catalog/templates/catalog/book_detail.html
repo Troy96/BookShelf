@@ -25,6 +25,8 @@
 		<p class="text-muted"><strong>Id:</strong>{{copy.id}}</p>
 		{% endfor %}
 	</div>
-	<a class="btn btn-danger" href="{% url 'book-delete' book.pk %}">Delete Book?</a></p>
-	<a class="btn btn-info" href="{% url 'book-update' book.pk %}">Update Book?</a></p>
+	{% if user.is_staff %}
+		<a class="btn btn-danger" href="{% url 'book-delete' book.pk %}">Delete Book?</a></p>
+		<a class="btn btn-info" href="{% url 'book-update' book.pk %}">Update Book?</a></p>
+	{% endif %}	
 	{% endblock %}

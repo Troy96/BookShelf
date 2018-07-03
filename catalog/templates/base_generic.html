@@ -10,7 +10,19 @@
 
   {% load static %}
   <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
-  
+  {% load staticfiles %}
+  <style>
+  body { 
+         background: url('{% static "images/bg.jpg" %}') no-repeat center center fixed; 
+         -webkit-background-size: cover;
+         -moz-background-size: cover;
+         -o-background-size: cover;
+         background-size: cover;
+        }
+        a:link {
+    color: red;
+}
+  </style>
 </head>
 <body>
 
@@ -20,7 +32,7 @@
 				{% block sidebar %}
 				<ul class="sidebar-nav">
 
-
+					<div class="well">
 					<li><a href="{% url 'index' %}">Home</a></li>
 					<li><a href="{% url 'books' %}">All Books</a></li>
 					<li><a href="{% url 'my-borrowed' %}">Borrowed Books</a></li>
@@ -39,11 +51,14 @@
    					<li><a href="{% url 'author-create' %}">Add Author</a></li> 
    					<li><a href="{% url 'book-create' %}">Add Book</a></li> 
    					{% endif %}
+   				</div>
 				</ul>
 				{% endblock %}
 			</div>
 			<div class="col-sm-10">
+				<div class="jumbotron">
 				{% block content%} {% endblock %}
+				</div>
 			</div>
 		</div>
 	</div>
