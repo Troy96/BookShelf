@@ -1,8 +1,22 @@
-.sidebar-naev{
+body { 
+    background: url('{% static "images/bg.jpg" %}') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-family: 'Sriracha', cursive;
+    }
+a{
+  color:grey;
+}
+.sidebar-nav{
 	margin-top: 20px;
 	padding: 0;
 	list-style: none;
 }
 a:link {
-    color: red;
+    text-decoration: none;
+}
+a:hover {
+	color: #000;
 }

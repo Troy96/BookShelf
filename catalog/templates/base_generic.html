@@ -5,9 +5,9 @@
 	{% block title %}<title>Local Library</title>{% endblock %}
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  	<link href="https://fonts.googleapis.com/css?family=Chela+One|Sriracha" rel="stylesheet">
   {% load static %}
   <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
   {% load staticfiles %}
@@ -18,10 +18,12 @@
          -moz-background-size: cover;
          -o-background-size: cover;
          background-size: cover;
+         font-family: 'Sriracha', cursive;
         }
-        a:link {
-    color: red;
-}
+        a{
+        	color:grey;
+        }
+       
   </style>
 </head>
 <body>
