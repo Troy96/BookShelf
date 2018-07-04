@@ -26,7 +26,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'y=!_#ssb$zz5jfkgug#f%2j^0z%-9e
 #DEBUG = False
 
 DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
-ALLOWED_HOSTS = ['nameless-falls-43462.herokuapp.com','localhost',]
+ALLOWED_HOSTS = ['.herokuapp.com','localhost',]
 
 
 
